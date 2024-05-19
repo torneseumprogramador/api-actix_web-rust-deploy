@@ -16,6 +16,10 @@ RUN cargo build --release
 # Use a smaller base image for the final stage
 FROM debian:buster-slim
 
+RUN apt-get update && apt-get install -y \
+    libssl1.1 \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set the working directory
 WORKDIR /usr/src/app
 
