@@ -25,6 +25,8 @@ RUN apt-get update && apt-get install -y \
 # Set the working directory
 WORKDIR /usr/src/app
 
+COPY ActixWeb.toml ./
+
 # Copy the build artifact from the builder stage
 COPY --from=builder /usr/src/app/target/release/console .
 
