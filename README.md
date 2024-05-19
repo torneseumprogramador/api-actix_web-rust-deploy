@@ -1,5 +1,5 @@
 # Como fiz o deploy
-- Instalar o docker
+- Configurar servidor
 ```shell
 # instalando libs
 sudo apt update
