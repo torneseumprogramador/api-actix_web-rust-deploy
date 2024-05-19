@@ -25,11 +25,5 @@ COPY --from=builder /usr/src/app/target/release/console .
 # Expose the port the app runs on
 EXPOSE 8080
 
-# Set the environment variables
-ENV DATABASE_USER=root
-ENV DATABASE_PASSWORD=root
-ENV DATABASE_DB=desafio_rust_alunos_com_orm
-ENV DATABASE_HOST=localhost
-
 # Run the application
 CMD ["./console"]
