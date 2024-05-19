@@ -13,11 +13,13 @@ COPY . .
 # Build the application
 RUN cargo build --release
 
-# Use a smaller base image for the final stage
-FROM debian:buster-slim
+# Use a more complete base image for the final stage
+FROM ubuntu:20.04
 
+# Install required libraries and development tools
 RUN apt-get update && apt-get install -y \
     libssl1.1 \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
